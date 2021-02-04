@@ -24,6 +24,8 @@ function rollDice() {
     if (sum >= 20){
         header.textContent = "You Win!"
         startButton.style.visibility = "visible"
+        diceScore.textContent = "Score:  " + sum + " - You Win!"
+      diceRoll.textContent = "Start Again!"
         diceArr=[]
     }
     }
