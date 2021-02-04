@@ -1,15 +1,18 @@
-const diceScore = document.querySelector("#score");
+let diceScore = document.querySelector("#score");
 let diceImg = document.querySelector("#result");
 let diceRoll = document.querySelector("#rolldice")
 let header = document.querySelector("#header");
+let startButton = document.querySelector("#strtbtn");
 let diceArr =[];
+
+startButton.style.visibility = "hidden"
 
 function rollDice() {
     let rollResult = Math.floor(Math.random() * 6) + 1;
     if (rollResult == 1) {
-        diceScore.textContent ="You Lose!"
+        header.textContent ="You Lose!"
+        startButton.style.visibility = "visible"
         diceArr = [];
-        diceRoll.textContent = "Start Again!"
     } else {
         diceScore.textContent = "Score:  " + rollResult;
         diceArr.push(rollResult);
@@ -19,17 +22,24 @@ function rollDice() {
     });
     diceScore.textContent = "Score: " + sum
     if (sum >= 20){
-        diceScore.textContent = "Score:  " + sum + " - You Win!"
-        diceRoll.textContent = "Start Again!";
+        header.textContent = "You Win!"
+        startButton.style.visibility = "visible"
         diceArr=[]
     }
     }
 
       diceImg.innerHTML ='<img src = "img/dice' + rollResult + '.png">';
     } 
+
+    startButton.addEventListener("click", () => {
+        diceArr = []
+        diceScore.textContent ="0"
+        header.textContent = "Let's Play!"
+    });
+
     diceRoll.addEventListener("click", () => {
-        if(diceRoll.textContent = "Start Again!"){
-            diceRoll.textContent = "Roll"
-        }
-        rollDice();
+        if (header.textContent = "You Lose!" || "You Win!")
+        header.textContent = "Let's Play!"
+        startButton.style.visibility = "hidden";
+        rollDice(); 
 });
