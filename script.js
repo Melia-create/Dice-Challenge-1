@@ -20,7 +20,7 @@ function rollDice() {
     diceScore.textContent = "Score: " + sum
     if (sum >= 20){
         diceScore.textContent = "Score:  " + sum + " - You Win!"
-        diceRoll.textContent = "Start Again!"
+      diceRoll.textContent = "Start Again!"
         diceArr=[]
     }
     }
