@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body{
+    background:
+    linear-gradient(to right, pink, purple);
+    font-family: Fredoka One;
+    color: aliceblue;
+    text-align: center;
+    border-style: ridge;
+    margin-left: 450px;
+    margin-right: 450px;
+    margin-top: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
