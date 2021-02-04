@@ -1,5 +1,5 @@
 const diceScore = document.querySelector("#score");
-let diceImg = document.querySelector("#img");
+let diceImg = document.querySelector("#result");
 let diceRoll = document.querySelector("#rolldice")
 let diceArr =[];
 
@@ -10,10 +10,9 @@ function rollDice() {
     } else {
         diceScore.textContent = "Score:  " + rollResult;
         diceArr.push(rollResult);
-        console.log(diceArr);
+        diceArr = [];
     }
-      console.log(rollResult);
-      rollImage.setAttribute("src", "img/dice" + rollResult + ".png");
+      diceImg.innerHTML ='<img src = "img/dice' + rollResult + '.png">';
     } 
     diceRoll.addEventListener("click", () => {
         rollDice();
